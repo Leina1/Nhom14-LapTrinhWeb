@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cửa hàng Guitar</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, sans-serif;
+      }
+
+      body {
+        background-color: #f4f4f4;
+        color: #333;
+      }
+
+      /* Header */
+      header {
+        background-color: #1a1a1a;
+        padding: 20px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+      }
+
+      .header-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .logo {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .logo img {
+        width: 40px;
+        height: 40px;
+      }
+
+      .logo h1 {
+        color: #fff;
+        font-size: 24px;
+      }
+
+      nav ul {
+        list-style: none;
+        display: flex;
+        gap: 20px;
+      }
+
+      nav ul li a {
+        color: #fff;
+        text-decoration: none;
+        font-size: 16px;
+        padding: 10px 15px;
+        border-radius: 5px;
+        transition: background-color 0.3s;
+      }
+
+      nav ul li a:hover {
+        background-color: #d32f2f;
+      }
+
+      /* Banner */
+      .banner {
+        position: relative;
+        height: 500px;
+        background-image: url("https://images.unsplash.com/photo-1510915361894-ffb57ad274e1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80");
+        background-size: cover;
+        background-position: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        color: #fff;
+      }
+
+      .banner::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 1;
+      }
+
+      .banner-content {
+        position: relative;
+        z-index: 2;
+      }
+
+      .banner h2 {
+        font-size: 48px;
+        margin-bottom: 20px;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+      }
+
+      .banner p {
+        font-size: 20px;
+        margin-bottom: 30px;
+      }
+
+      .cta-button {
+        display: inline-block;
+        padding: 15px 30px;
+        background-color: #d32f2f;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 5px;
+        font-size: 18px;
+        transition: background-color 0.3s;
+      }
+
+      .cta-button:hover {
+        background-color: #b71c1c;
+      }
+
+      /* Content */
+      .content {
+        max-width: 1200px;
+        margin: 40px auto;
+        padding: 0 20px;
+        text-align: center;
+      }
+
+      .content h3 {
+        font-size: 32px;
+        margin-bottom: 20px;
+        color: #1a1a1a;
+      }
+
+      .content p {
+        font-size: 18px;
+        line-height: 1.6;
+        color: #555;
+        margin-bottom: 20px;
+      }
+
+      /* Footer */
+      footer {
+        background-color: #1a1a1a;
+        color: #fff;
+        padding: 20px;
+        text-align: center;
+      }
+
+      footer p {
+        font-size: 14px;
+      }
+
+      footer a {
+        color: #d32f2f;
+        text-decoration: none;
+      }
+
+      footer a:hover {
+        text-decoration: underline;
+      }
+
+      /* Responsive */
+      @media (max-width: 768px) {
+        .header-container {
+          flex-direction: column;
+          gap: 20px;
+        }
+
+        nav ul {
+          flex-direction: column;
+          gap: 10px;
+          text-align: center;
+        }
+
+        .banner h2 {
+          font-size: 32px;
+        }
+
+        .banner p {
+          font-size: 16px;
+        }
+
+        .content h3 {
+          font-size: 24px;
+        }
+
+        .content p {
+          font-size: 16px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header -->
+    <header>
+      <div class="header-container">
+        <div class="logo">
+          <img
+            src="https://img.icons8.com/ios-filled/50/ffffff/guitar.png"
+            alt="Guitar Logo"
+          />
+          <h1>Cửa hàng Guitar</h1>
+        </div>
+        <nav>
+          <ul>
+            <li><a href="/list.html">Danh sách sản phẩm</a></li>
+            <li><a href="/add">Thêm sản phẩm</a></li>
+            <li><a href="/delete">Xóa sản phẩm</a></li>
+            <li><a href="/update">Cập nhật sản phẩm</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Banner -->
+    <section class="banner">
+      <div class="banner-content">
+        <h2>Khám phá những cây đàn Guitar tuyệt vời</h2>
+        <p>Chất lượng hàng đầu, phong cách độc đáo, dành riêng cho bạn!</p>
+        <a href="/list.html" class="cta-button">Xem sản phẩm ngay</a>
+      </div>
+    </section>
+
+    <!-- Content -->
+    <section class="content">
+      <h3>Chào mừng đến với Cửa hàng Guitar</h3>
+      <p>
+        Chúng tôi tự hào mang đến những cây đàn guitar chất lượng cao, từ cổ
+        điển đến hiện đại, phù hợp với mọi nghệ sĩ. Hãy khám phá bộ sưu tập của
+        chúng tôi và tìm cây đàn hoàn hảo để truyền cảm hứng cho âm nhạc của
+        bạn!
+      </p>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <p>
+        &copy; 2025 Cửa hàng Guitar. Mọi quyền được bảo lưu.
+        <a href="mailto:contact@guitarshop.com">Liên hệ chúng tôi</a>
+      </p>
+    </footer>
+  </body>
+</html>

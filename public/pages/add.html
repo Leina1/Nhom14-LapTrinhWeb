@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Thêm sản phẩm</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+      label {
+        display: block;
+        margin: 10px 0 5px;
+      }
+      input,
+      textarea {
+        width: 100%;
+        padding: 8px;
+        margin-bottom: 10px;
+        box-sizing: border-box;
+      }
+      button {
+        padding: 10px 20px;
+        background-color: #4caf50;
+        color: white;
+        border: none;
+        cursor: pointer;
+      }
+      button:hover {
+        background-color: #45a049;
+      }
+      .message {
+        margin-top: 20px;
+        color: green;
+      }
+      .error {
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Thêm sản phẩm mới</h1>
+    <form id="productForm">
+      <!-- Đã xoá trường ID sản phẩm -->
+
+      <label for="name">Tên sản phẩm:</label>
+      <input type="text" id="name" name="name" required />
+
+      <label for="description">Mô tả:</label>
+      <textarea id="description" name="description" required></textarea>
+
+      <label for="price">Giá sản phẩm:</label>
+      <input type="number" id="price" name="price" required />
+
+      <label for="xuat_su">Xuất xứ:</label>
+      <input type="text" id="xuat_su" name="xuat_su" required />
+
+      <label for="image">Chọn hình ảnh:</label>
+      <input type="file" id="image" name="image" accept="image/*" required />
+
+      <button type="submit">Thêm sản phẩm</button>
+    </form>
+
+    <div class="message" id="message"></div>
+    <p><a href="/">Quay lại trang chủ</a></p>
+
+    <script>
+      document
+        .getElementById("productForm")
+        .addEventListener("submit", function (event) {
+          event.preventDefault();
+
+          const formData = new FormData();
+          formData.append("name", document.getElementById("name").value);
+          formData.append(
+            "description",
+            document.getElementById("description").value
+          );
+          formData.append("price", document.getElementById("price").value);
+          formData.append("xuat_su", document.getElementById("xuat_su").value);
+          formData.append("image", document.getElementById("image").files[0]);
+
+          fetch("/api/products", {
+            method: "POST",
+            body: formData,
+          })
+            .then((response) => response.json())
+            .then((data) => {
+              if (data.product) {
+                document.getElementById(
+                  "message"
+                ).innerHTML = `Sản phẩm đã được thêm thành công với ID: ${data.product.id}`;
+                document.getElementById("message").classList.remove("error");
+                document.getElementById("message").classList.add("success");
+
+                document.getElementById("productForm").reset();
+              } else {
+                document.getElementById("message").innerHTML =
+                  "Có lỗi xảy ra khi thêm sản phẩm!";
+                document.getElementById("message").classList.add("error");
+              }
+            })
+            .catch((error) => {
+              console.error("Lỗi:", error);
+              document.getElementById("message").innerHTML =
+                "Có lỗi xảy ra khi gửi yêu cầu.";
+              document.getElementById("message").classList.add("error");
+            });
+        });
+    </script>
+  </body>
+</html>

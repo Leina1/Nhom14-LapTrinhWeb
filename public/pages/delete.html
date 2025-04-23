@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Xóa sản phẩm</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+      label {
+        display: block;
+        margin: 10px 0 5px;
+      }
+      input[type="checkbox"] {
+        margin-right: 10px;
+      }
+      button {
+        padding: 10px 20px;
+        background-color: #ff4444;
+        color: white;
+        border: none;
+        cursor: pointer;
+      }
+      button:hover {
+        background-color: #cc0000;
+      }
+      .product-list {
+        margin-bottom: 20px;
+      }
+      .product-item {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 10px;
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+      }
+      .product-item img {
+        width: 50px;
+        height: 50px;
+        object-fit: cover;
+        margin-right: 10px;
+      }
+      .selected-products {
+        margin-top: 20px;
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+      }
+      .selected-products ul {
+        list-style-type: none;
+        padding: 0;
+      }
+      .selected-products li {
+        padding: 5px 0;
+      }
+      .message {
+        margin-top: 20px;
+        color: green;
+      }
+      .error {
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Xóa sản phẩm</h1>
+
+    <!-- Danh sách sản phẩm với checkbox -->
+    <div class="product-list" id="productList">
+      <!-- Các sản phẩm sẽ được hiển thị tại đây -->
+    </div>
+
+    <button id="deleteSelectedBtn">Xóa những sản phẩm đã chọn</button>
+
+    <!-- Hiển thị các sản phẩm đã chọn để xóa -->
+    <div class="selected-products" id="selectedProducts">
+      <h3>Sản phẩm đã chọn để xóa:</h3>
+      <ul id="selectedList"></ul>
+    </div>
+
+    <p><a href="/">Quay lại trang chủ</a></p>
+
+    <div class="message" id="message"></div>
+
+    <script>
+      const productList = document.getElementById("productList");
+      const selectedProducts = document.getElementById("selectedProducts");
+      const selectedList = document.getElementById("selectedList");
+      const deleteSelectedBtn = document.getElementById("deleteSelectedBtn");
+      const message = document.getElementById("message");
+
+      let selectedProductIds = [];
+
+      // Hàm tải danh sách sản phẩm
+      function loadProducts() {
+        fetch("/api/products")
+          .then((response) => response.json())
+          .then((products) => {
+            // Sắp xếp sản phẩm theo ID tăng dần
+            products.sort((a, b) => a.id.localeCompare(b.id));
+
+            productList.innerHTML = ""; // Xóa danh sách sản phẩm cũ
+
+            products.forEach((product) => {
+              const productItem = document.createElement("div");
+              productItem.classList.add("product-item");
+
+              const productImage = document.createElement("img");
+              productImage.src = product.image
+                ? `/images/${product.image}`
+                : "https://via.placeholder.com/50";
+
+              const productName = document.createElement("span");
+              productName.textContent = product.name;
+
+              const checkbox = document.createElement("input");
+              checkbox.type = "checkbox";
+              checkbox.value = product.id;
+              checkbox.addEventListener("change", () =>
+                toggleSelection(product.id, checkbox)
+              );
+
+              productItem.appendChild(productImage);
+              productItem.appendChild(productName);
+              productItem.appendChild(checkbox);
+
+              productList.appendChild(productItem);
+            });
+          })
+          .catch((error) => {
+            console.error("Error loading products:", error);
+            message.innerHTML = "Lỗi khi tải danh sách sản phẩm.";
+            message.classList.add("error");
+          });
+      }
+
+      // Hàm xử lý khi người dùng chọn hoặc bỏ chọn sản phẩm
+      function toggleSelection(productId, checkbox) {
+        if (checkbox.checked) {
+          selectedProductIds.push(productId);
+          const li = document.createElement("li");
+          li.textContent = productId;
+
+          const removeButton = document.createElement("button");
+          removeButton.textContent = "Hủy chọn";
+          removeButton.addEventListener("click", () => {
+            checkbox.checked = false;
+            removeProductFromSelection(productId, li);
+          });
+
+          li.appendChild(removeButton);
+          selectedList.appendChild(li);
+        } else {
+          selectedProductIds = selectedProductIds.filter(
+            (id) => id !== productId
+          );
+          const listItems = selectedList.querySelectorAll("li");
+          listItems.forEach((li) => {
+            if (li.textContent.includes(productId)) {
+              selectedList.removeChild(li);
+            }
+          });
+        }
+
+        // Nếu không có sản phẩm nào được chọn, ẩn phần danh sách đã chọn
+        if (selectedProductIds.length === 0) {
+          selectedProducts.style.display = "none";
+        } else {
+          selectedProducts.style.display = "block";
+        }
+      }
+
+      // Hàm hủy bỏ lựa chọn sản phẩm
+      function removeProductFromSelection(productId, li) {
+        selectedProductIds = selectedProductIds.filter(
+          (id) => id !== productId
+        );
+        selectedList.removeChild(li);
+
+        if (selectedProductIds.length === 0) {
+          selectedProducts.style.display = "none";
+        }
+      }
+
+      // Xử lý sự kiện xóa các sản phẩm đã chọn
+      deleteSelectedBtn.addEventListener("click", () => {
+        if (selectedProductIds.length === 0) {
+          message.innerHTML = "Vui lòng chọn ít nhất một sản phẩm để xóa.";
+          message.classList.add("error");
+          return;
+        }
+
+        // Gửi yêu cầu xóa những sản phẩm đã chọn
+        fetch("/api/products/delete", {
+          method: "DELETE",
+          body: JSON.stringify({ ids: selectedProductIds }),
+          headers: { "Content-Type": "application/json" },
+        })
+          .then((response) => response.json())
+          .then((data) => {
+            if (data.success) {
+              message.innerHTML = "Các sản phẩm đã được xóa thành công!";
+              message.classList.remove("error");
+              message.classList.add("success");
+
+              // Làm mới danh sách sản phẩm và xóa các mục đã chọn
+              loadProducts();
+              selectedProductIds = [];
+              selectedList.innerHTML = "";
+              selectedProducts.style.display = "none";
+            } else {
+              message.innerHTML = "Có lỗi xảy ra khi xóa sản phẩm.";
+              message.classList.add("error");
+            }
+          })
+          .catch((error) => {
+            console.error("Error deleting products:", error);
+            message.innerHTML = "Đã xảy ra lỗi khi gửi yêu cầu xóa.";
+            message.classList.add("error");
+          });
+      });
+
+      // Tải danh sách sản phẩm khi trang được tải
+      loadProducts();
+    </script>
+  </body>
+</html>

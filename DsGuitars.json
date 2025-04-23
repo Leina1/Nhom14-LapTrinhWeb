@@ -1,0 +1,765 @@
+[
+  {
+    "id": "GTRS0001",
+    "name": "Fender Stratocaster",
+    "description": "Đàn guitar điện Fender Stratocaster với âm thanh sắc nét, phù hợp cho nhiều phong cách chơi nhạc.",
+    "image": "GTR001.jpg",
+    "price": 1499,
+    "rating": "Tốt",
+    "xuat_su": "USA",
+    "comments": [
+      {
+        "user": "JohnDoe",
+        "comment": "Đàn này âm thanh rất tuyệt, chơi rock cực kỳ phù hợp!",
+        "date": "2025-04-16"
+      },
+      {
+        "user": "JaneSmith",
+        "comment": "Cảm giác chơi rất mượt mà, rất thích sản phẩm này!",
+        "date": "2025-04-17"
+      }
+    ]
+  },
+  {
+    "id": "GTRS0002",
+    "name": "Gibson Les Paul Standard",
+    "description": "Đàn guitar điện Gibson Les Paul Standard với âm thanh ấm, lý tưởng cho người chơi chuyên nghiệp.",
+    "image": "GTR002.jpg",
+    "price": 2499,
+    "rating": "Tốt",
+    "xuat_su": "USA",
+    "comments": [
+      {
+        "user": "GuitarMaster",
+        "comment": "Một trong những đàn guitar tốt nhất tôi từng chơi!",
+        "date": "2025-04-15"
+      }
+    ]
+  },
+  {
+    "id": "GTRS0003",
+    "name": "Yamaha C40",
+    "description": "Đàn guitar classic Yamaha C40, thích hợp cho người mới bắt đầu học.",
+    "image": "GTR003.jpg",
+    "price": 119,
+    "rating": "Chưa đánh giá",
+    "xuat_su": "Japan",
+    "comments": []
+  },
+  {
+    "id": "GTRS0004",
+    "name": "Taylor 814ce",
+    "description": "Đàn guitar acoustic Taylor 814ce với chất lượng cao, dành cho các buổi biểu diễn chuyên nghiệp.",
+    "image": "GTR004.jpg",
+    "price": 3499,
+    "rating": "Tốt",
+    "xuat_su": "USA",
+    "comments": [
+      {
+        "user": "MusicLover",
+        "comment": "Sản phẩm tuyệt vời, rất phù hợp cho những buổi biểu diễn lớn.",
+        "date": "2025-04-18"
+      }
+    ]
+  },
+  {
+    "id": "GTRS0005",
+    "name": "Ibanez SR500E",
+    "description": "Đàn bass Ibanez SR500E với thiết kế hiện đại, phù hợp cho người chơi bass ở mọi cấp độ.",
+    "image": "GTR005.jpg",
+    "price": 499,
+    "rating": "Không tốt",
+    "xuat_su": "Indonesia",
+    "comments": [
+      {
+        "user": "BassFan",
+        "comment": "Cảm giác không tốt, âm thanh thiếu độ rõ ràng.",
+        "date": "2025-04-20"
+      }
+    ]
+  },
+  {
+    "id": "GTRS0006",
+    "name": "Epiphone SG Standard",
+    "description": "Đàn guitar điện Epiphone SG Standard với phong cách cổ điển, phù hợp cho người mới học.",
+    "image": "GTR006.jpg",
+    "price": 399,
+    "rating": "Chưa đánh giá",
+    "xuat_su": "China",
+    "comments": []
+  },
+  {
+    "id": "GTRS0007",
+    "name": "Gretsch G9200 Resonator",
+    "description": "Đàn guitar resonator Gretsch G9200 với âm thanh độc đáo, thích hợp cho nhạc blues.",
+    "image": "GTR007.jpg",
+    "price": 799,
+    "rating": "Tốt",
+    "xuat_su": "USA",
+    "comments": [
+      {
+        "user": "BluesPlayer",
+        "comment": "Âm thanh rất độc đáo, tuyệt vời cho dòng nhạc blues.",
+        "date": "2025-04-21"
+      }
+    ]
+  },
+  {
+    "id": "GTRS0008",
+    "name": "Martin D-28",
+    "description": "Đàn guitar acoustic Martin D-28 với âm thanh phong phú, dành cho người chơi chuyên nghiệp.",
+    "image": "GTR008.jpg",
+    "price": 2799,
+    "rating": "Tốt",
+    "xuat_su": "USA",
+    "comments": [
+      {
+        "user": "ProfessionalMusician",
+        "comment": "Một trong những cây đàn acoustic tuyệt vời nhất tôi từng sở hữu.",
+        "date": "2025-04-19"
+      }
+    ]
+  },
+  {
+    "id": "GTRS0009",
+    "name": "Fender Jazz Bass",
+    "description": "Đàn bass Fender Jazz Bass với âm thanh linh hoạt, phù hợp cho nhiều thể loại nhạc.",
+    "image": "GTR009.jpg",
+    "price": 899,
+    "rating": "Chưa đánh giá",
+    "xuat_su": "USA",
+    "comments": []
+  },
+  {
+    "id": "GTRS0010",
+    "name": "Gibson ES-335",
+    "description": "Đàn guitar archtop Gibson ES-335 với thiết kế sang trọng, lý tưởng cho nhạc jazz và rock.",
+    "image": "GTR010.jpg",
+    "price": 2599,
+    "rating": "Tốt",
+    "xuat_su": "USA",
+    "comments": [
+      {
+        "user": "JazzGuitarist",
+        "comment": "Rất ấn tượng với chất lượng âm thanh và thiết kế của cây đàn này.",
+        "date": "2025-04-22"
+      }
+    ]
+  },
+  {
+    "id": "GTRS0011",
+    "name": "Taylor GS Mini",
+    "description": "Một cây guitar du lịch nhỏ gọn với âm thanh mạnh mẽ.",
+    "image": "GTR011.jpg",
+    "price": 700,
+    "rating": "Rất Tốt",
+    "xuat_su": "USA",
+    "comments": [
+      {
+        "user": "TravelPlayer",
+        "comment": "Hoàn hảo cho những chuyến đi xa, nhỏ mà có võ!",
+        "date": "2025-04-20"
+      }
+    ]
+  },
+  {
+    "id": "GTRS0012",
+    "name": "Fender Telecaster",
+    "description": "Một cây guitar điện cổ điển với âm thanh sáng và sắc nét.",
+    "image": "GTR012.jpg",
+    "price": 1600,
+    "rating": "Rất Tốt",
+    "xuat_su": "USA",
+    "comments": [
+      {
+        "user": "StudioTone",
+        "comment": "Tele là lựa chọn hàng đầu của mình cho thu âm rhythm.",
+        "date": "2025-04-19"
+      }
+    ]
+  },
+  {
+    "id": "GTRS0013",
+    "name": "Gibson J-45",
+    "description": "Một cây guitar acoustic cao cấp với âm thanh ấm áp và phong phú.",
+    "image": "GTR013.jpg",
+    "price": 2700,
+    "rating": "Xuất Sắc",
+    "xuat_su": "USA",
+    "comments": [
+      {
+        "user": "AcousticSoul",
+        "comment": "Chất âm rất đầy và sâu, cực kỳ ưng ý với cây J-45 này!",
+        "date": "2025-04-18"
+      }
+    ]
+  },
+  {
+    "id": "GTRS0014",
+    "name": "Ibanez AS73",
+    "description": "Một cây archtop guitar giá rẻ nhưng chất lượng vượt trội.",
+    "image": "GTR014.jpg",
+    "price": 500,
+    "rating": "Tốt",
+    "xuat_su": "Japan",
+    "comments": [
+      {
+        "user": "JazzBeginner",
+        "comment": "Với giá này mà có được tiếng jazz như vậy là quá ngon!",
+        "date": "2025-04-17"
+      }
+    ]
+  },
+  {
+    "id": "GTRS0015",
+    "name": "Epiphone Hummingbird",
+    "description": "Một cây acoustic guitar đẹp với âm thanh cân bằng.",
+    "image": "GTR015.jpg",
+    "price": 800,
+    "rating": "Rất Tốt",
+    "xuat_su": "China",
+    "comments": [
+      {
+        "user": "VintageFan",
+        "comment": "Thiết kế rất đẹp, nhìn là muốn chơi liền!",
+        "date": "2025-04-16"
+      }
+    ]
+  },
+  {
+    "id": "GTRS0016",
+    "name": "Gretsch G5420T",
+    "description": "Một cây hollow body guitar với âm thanh sâu và vang.",
+    "image": "GTR016.jpg",
+    "price": 1200,
+    "rating": "Rất Tốt",
+    "xuat_su": "Korea",
+    "comments": [
+      {
+        "user": "OldSchoolVibe",
+        "comment": "Cây này hợp đánh rockabilly cực kỳ, rất đã tai!",
+        "date": "2025-04-15"
+      }
+    ]
+  },
+  {
+    "id": "GTRS0017",
+    "name": "Fender Mustang Bass",
+    "description": "Một cây bass nhỏ gọn với âm thanh mạnh mẽ, dễ chơi.",
+    "image": "GTR017.jpg",
+    "price": 1100,
+    "rating": "Rất Tốt",
+    "xuat_su": "Mexico",
+    "comments": [
+      {
+        "user": "BassGroove",
+        "comment": "Dễ chơi và gọn nhẹ, hợp đi diễn lắm luôn.",
+        "date": "2025-04-14"
+      }
+    ]
+  },
+  {
+    "id": "GTRS0018",
+    "name": "Danelectro 59M NOS+",
+    "description": "Một cây guitar điện phong cách vintage với âm thanh đặc biệt.",
+    "image": "GTR018.jpg",
+    "price": 500,
+    "rating": "Tốt",
+    "xuat_su": "China",
+    "comments": [
+      {
+        "user": "IndieNoise",
+        "comment": "Chất âm độc, hơi lofi nhưng cực chất trong indie rock.",
+        "date": "2025-04-13"
+      }
+    ]
+  },
+  {
+    "id": "GTRS0019",
+    "name": "Cordoba C5",
+    "description": "Một cây guitar cổ điển với âm thanh ấm áp, phù hợp cho người mới chơi.",
+    "image": "GTR019.jpg",
+    "price": 400,
+    "rating": "Tốt",
+    "xuat_su": "Spain",
+    "comments": [
+      {
+        "user": "NewbieGuitar",
+        "comment": "Rất dễ học, cổ đàn thoải mái, âm thanh rất ổn.",
+        "date": "2025-04-12"
+      }
+    ]
+  },
+  {
+    "id": "GTRS0020",
+    "name": "National Style O",
+    "description": "Một cây resonator guitar cao cấp với thiết kế kim loại độc đáo.",
+    "image": "GTR020.jpg",
+    "price": 3500,
+    "rating": "Xuất Sắc",
+    "xuat_su": "USA",
+    "comments": [
+      {
+        "user": "SlideMaster",
+        "comment": "Resonator đỉnh nhất từng chơi, thiết kế nhìn rất đã!",
+        "date": "2025-04-11"
+      }
+    ]
+  },
+  {
+    "id": "GTRS0021",
+    "name": "PRS Custom 24",
+    "description": "Một cây guitar điện cao cấp với thiết kế tinh tế và âm thanh phong phú.",
+    "image": "GTR021.jpg",
+    "price": 3000,
+    "rating": "Chưa đánh giá",
+    "xuat_su": "Mỹ",
+    "comments": []
+  },
+  {
+    "id": "GTRS0022",
+    "name": "Rickenbacker 330",
+    "description": "Một cây guitar điện cổ điển với âm thanh đặc trưng của Rickenbacker.",
+    "image": "GTR022.jpg",
+    "price": 2100,
+    "rating": "Rất Tốt",
+    "xuat_su": "Mỹ",
+    "comments": [
+      {
+        "user": "Charlie",
+        "comment": "Âm thanh cổ điển rất khác biệt, rất phù hợp với indie rock.",
+        "date": "2025-04-03"
+      }
+    ]
+  },
+  {
+    "id": "GTRS0023",
+    "name": "Gibson SG Standard",
+    "description": "Một cây guitar điện với thiết kế nhẹ và âm thanh mạnh mẽ.",
+    "image": "GTR023.jpg",
+    "price": 1800,
+    "rating": "Chưa đánh giá",
+    "xuat_su": "Mỹ",
+    "comments": []
+  },
+  {
+    "id": "GTRS0024",
+    "name": "Fender Jaguar",
+    "description": "Một cây guitar điện với âm thanh linh hoạt và thiết kế retro.",
+    "image": "GTR024.jpg",
+    "price": 1600,
+    "rating": "Rất Tốt",
+    "xuat_su": "Mỹ",
+    "comments": [
+      {
+        "user": "Eve",
+        "comment": "Thiết kế đẹp, âm thanh nhiều tone chọn lựa.",
+        "date": "2025-04-05"
+      }
+    ]
+  },
+  {
+    "id": "GTRS0025",
+    "name": "Gretsch White Falcon",
+    "description": "Một cây hollow body cao cấp với thiết kế sang trọng và âm thanh ấn tượng.",
+    "image": "GTR025.jpg",
+    "price": 4000,
+    "rating": "Xuất Sắc",
+    "xuat_su": "Mỹ",
+    "comments": [
+      {
+        "user": "Frank",
+        "comment": "Cây guitar này chơi jazz và blues rất hay.",
+        "date": "2025-04-06"
+      }
+    ]
+  },
+  {
+    "id": "GTRS0026",
+    "name": "ESP LTD EC-1000",
+    "description": "Một cây guitar điện hiện đại với âm thanh mạnh mẽ.",
+    "image": "GTR026.jpg",
+    "price": 1000,
+    "rating": "Tốt",
+    "xuat_su": "Nhật Bản",
+    "comments": [
+      {
+        "user": "George",
+        "comment": "Cảm giác chơi cực kỳ chắc tay, hợp với metal.",
+        "date": "2025-04-07"
+      }
+    ]
+  },
+  {
+    "id": "GTRS0027",
+    "name": "Takamine GD93CE",
+    "description": "Một cây guitar acoustic với âm thanh ấm áp.",
+    "image": "GTR027.jpg",
+    "price": 900,
+    "rating": "Dưới Trung Bình",
+    "xuat_su": "Nhật Bản",
+    "comments": [
+      {
+        "user": "SlightlyDissatisfied",
+        "comment": "Cảm thấy chất lượng gia công chưa thực sự tỉ mỉ.",
+        "date": "2025-04-22"
+      }
+    ]
+  },
+  {
+    "id": "GTRS0028",
+    "name": "G&L Legacy",
+    "description": "Một cây guitar điện chất lượng cao với âm thanh đặc trưng.",
+    "image": "GTR028.jpg",
+    "price": 1400,
+    "rating": "Rất Tốt",
+    "xuat_su": "Mỹ",
+    "comments": [
+      {
+        "user": "Ivy",
+        "comment": "Gần giống Fender nhưng cải tiến hiện đại hơn.",
+        "date": "2025-04-09"
+      }
+    ]
+  },
+  {
+    "id": "GTRS0029",
+    "name": "Fender Precision Bass",
+    "description": "Một cây bass guitar với âm thanh mạnh mẽ và ổn định.",
+    "image": "GTR029.jpg",
+    "price": 1300,
+    "rating": "Xuất Sắc",
+    "xuat_su": "Mỹ",
+    "comments": [
+      {
+        "user": "Jack",
+        "comment": "Bass đánh rất chắc và dày, cực kỳ ổn định trong ban nhạc.",
+        "date": "2025-04-10"
+      }
+    ]
+  },
+  {
+    "id": "GTRS0030",
+    "name": "Epiphone Casino",
+    "description": "Một cây hollow body với thiết kế cổ điển và âm thanh ấm áp.",
+    "image": "GTR030.jpg",
+    "price": 800,
+    "rating": "Dưới Trung Bình",
+    "xuat_su": "Trung Quốc",
+    "comments": [
+      {
+        "user": "ExpectedMore",
+        "comment": "Chất lượng hoàn thiện không tương xứng với mức giá.",
+        "date": "2025-04-22"
+      }
+    ]
+  },
+  {
+    "id": "GTRS0031",
+    "name": "Duesenberg Starplayer TV",
+    "description": "Một cây guitar điện cao cấp với thiết kế cổ điển và âm thanh tinh tế.",
+    "image": "GTR031.jpg",
+    "price": 2500,
+    "rating": "Xuất Sắc",
+    "xuat_su": "Đức",
+    "comments": [
+      {
+        "user": "Liam",
+        "comment": "Một cây guitar tuyệt vời với âm thanh tinh tế và thiết kế sang trọng. Rất phù hợp cho những ai yêu thích âm nhạc cổ điển và phong cách vintage.",
+        "date": "2025-04-12"
+      }
+    ]
+  },
+  {
+    "id": "GTRS0032",
+    "name": "Schecter Hellraiser C-1",
+    "description": "Một cây guitar điện dành cho metal với âm thanh mạnh mẽ và thiết kế hiện đại.",
+    "image": "GTR032.jpg",
+    "price": 1100,
+    "rating": "Kém",
+    "xuat_su": "Mỹ",
+    "comments": [
+      {
+        "user": "Metalhead",
+        "comment": "Cảm giác chơi không thoải mái, cần đàn quá dày.",
+        "date": "2025-04-23"
+      }
+    ]
+  },
+  {
+    "id": "GTRS0033",
+    "name": "Jackson Rhoads RR3",
+    "description": "Một cây guitar điện có thiết kế táo bạo, phù hợp với những tay chơi rock và metal.",
+    "image": "GTR033.jpg",
+    "price": 1200,
+    "rating": "Chưa đánh giá",
+    "xuat_su": "Mỹ",
+    "comments": []
+  },
+  {
+    "id": "GTRS0034",
+    "name": "Dean ML Dimebag",
+    "description": "Một cây guitar điện mạnh mẽ với thiết kế góc cạnh và âm thanh bùng nổ.",
+    "image": "GTR034.jpg",
+    "price": 1400,
+    "rating": "Rất Tốt",
+    "xuat_su": "Mỹ",
+    "comments": [
+      {
+        "user": "Oliver",
+        "comment": "Dean ML Dimebag có thiết kế mạnh mẽ và âm thanh bùng nổ. Hoàn hảo cho những ai yêu thích thể loại shred và metal.",
+        "date": "2025-04-15"
+      }
+    ]
+  },
+  {
+    "id": "GTRS0035",
+    "name": "Taylor T5z Classic",
+    "description": "Một cây guitar hybrid linh hoạt, kết hợp giữa âm thanh acoustic và điện.",
+    "image": "GTR035.jpg",
+    "price": 2200,
+    "rating": "Xuất Sắc",
+    "xuat_su": "Mỹ",
+    "comments": [
+      {
+        "user": "Sophia",
+        "comment": "Một cây guitar tuyệt vời cho những ai muốn có âm thanh linh hoạt giữa acoustic và electric. Thiết kế rất đẹp mắt và chất lượng cao.",
+        "date": "2025-04-16"
+      }
+    ]
+  },
+  {
+    "id": "GTRS0036",
+    "name": "Fender Duo-Sonic",
+    "description": "Một cây guitar điện nhỏ gọn với âm thanh sắc nét, phù hợp với nhiều phong cách chơi nhạc.",
+    "image": "GTR036.jpg",
+    "price": 850,
+    "rating": "Không Tốt",
+    "xuat_su": "Mỹ",
+    "comments": [
+      {
+        "user": "IndieRocker",
+        "comment": "Âm thanh không đa dạng như mong đợi.",
+        "date": "2025-04-23"
+      }
+    ]
+  },
+  {
+    "id": "GTRS0037",
+    "name": "Ibanez Artcore AF75",
+    "description": "Một cây hollow body guitar với âm thanh ấm áp và thiết kế cổ điển.",
+    "image": "GTR037.jpg",
+    "price": 600,
+    "rating": "Dưới Trung Bình",
+    "xuat_su": "Nhật Bản",
+    "comments": [
+      {
+        "user": "JazzLover",
+        "comment": "Chất lượng hoàn thiện quá kém.",
+        "date": "2025-04-23"
+      }
+    ]
+  },
+  {
+    "id": "GTRS0038",
+    "name": "Godin Multiac Nylon",
+    "description": "Một cây guitar cổ điển với công nghệ hiện đại, phù hợp với nhiều thể loại nhạc.",
+    "image": "GTR038.jpg",
+    "price": 1700,
+    "rating": "Chưa đánh giá",
+    "xuat_su": "Canada",
+    "comments": []
+  },
+  {
+    "id": "GTRS0039",
+    "name": "Charvel Pro-Mod DK24",
+    "description": "Một cây guitar điện chất lượng cao với âm thanh mạnh mẽ và thiết kế hiện đại.",
+    "image": "GTR039.jpg",
+    "price": 1300,
+    "rating": "Tốt",
+    "xuat_su": "Mỹ",
+    "comments": [
+      {
+        "user": "Zoe",
+        "comment": "Charvel Pro-Mod DK24 là một cây guitar tuyệt vời với cần đàn nhanh và âm thanh mạnh mẽ. Rất thích hợp cho các solo và đa dạng thể loại nhạc.",
+        "date": "2025-04-20"
+      }
+    ]
+  },
+  {
+    "id": "GTRS0040",
+    "name": "Gibson Firebird",
+    "description": "Một cây guitar điện độc đáo với thiết kế nổi bật và âm thanh mạnh mẽ.",
+    "image": "GTR040.jpg",
+    "price": 2200,
+    "rating": "Không Tốt",
+    "xuat_su": "Mỹ",
+    "comments": [
+      {
+        "user": "BluesFan",
+        "comment": "Chất lượng hoàn thiện có vài lỗi nhỏ.",
+        "date": "2025-04-23"
+      }
+    ]
+  },
+  {
+    "id": "GTRS0041",
+    "name": "Fender Bass VI",
+    "description": "Một cây bass guitar độc đáo với thiết kế 6 dây và âm thanh phong phú.",
+    "image": "GTR041.jpg",
+    "price": 1800,
+    "rating": "Rất Tốt",
+    "xuat_su": "Mỹ",
+    "comments": [
+      {
+        "user": "BassLover23",
+        "comment": "Cây đàn này có âm thanh mạnh mẽ và rất phù hợp với nhiều thể loại nhạc.",
+        "date": "2025-04-22"
+      }
+    ]
+  },
+  {
+    "id": "GTRS0042",
+    "name": "Hofner Violin Bass",
+    "description": "Một cây bass cổ điển với thiết kế độc đáo và âm thanh ấm áp.",
+    "image": "GTR042.jpg",
+    "price": 2500,
+    "rating": "Xuất Sắc",
+    "xuat_su": "Đức",
+    "comments": [
+      {
+        "user": "JazzFanatic",
+        "comment": "Âm thanh của cây đàn này rất ấm áp, phù hợp với phong cách jazz.",
+        "date": "2025-04-21"
+      }
+    ]
+  },
+  {
+    "id": "GTRS0043",
+    "name": "Music Man StingRay",
+    "description": "Một cây bass mạnh mẽ với thiết kế hiện đại và âm thanh đặc trưng.",
+    "image": "GTR043.jpg",
+    "price": 2000,
+    "rating": "Rất Tốt",
+    "xuat_su": "Mỹ",
+    "comments": [
+      {
+        "user": "RockStar88",
+        "comment": "Cây đàn này thật sự mạnh mẽ, tôi sử dụng cho nhiều phong cách nhạc khác nhau.",
+        "date": "2025-04-23"
+      }
+    ]
+  },
+  {
+    "id": "GTRS0044",
+    "name": "Squier Classic Vibe 60s Strat",
+    "description": "Một cây guitar điện phong cách vintage với âm thanh sắc nét.",
+    "image": "GTR044.jpg",
+    "price": 450,
+    "rating": "Tốt",
+    "xuat_su": "Indonesia",
+    "comments": [
+      {
+        "user": "VintageGuitarFan",
+        "comment": "Chất lượng tuyệt vời với mức giá hợp lý. Âm thanh đặc trưng của Strat rất rõ ràng.",
+        "date": "2025-04-21"
+      }
+    ]
+  },
+  {
+    "id": "GTRS0045",
+    "name": "Eastman T486",
+    "description": "Một cây archtop guitar chất lượng cao với âm thanh tuyệt vời.",
+    "image": "GTR045.jpg",
+    "price": 1500,
+    "rating": "Rất Tốt",
+    "xuat_su": "Trung Quốc",
+    "comments": [
+      {
+        "user": "JazzMaster",
+        "comment": "Đây là cây đàn hoàn hảo cho những ai yêu thích jazz. Âm thanh rất tuyệt vời.",
+        "date": "2025-04-22"
+      }
+    ]
+  },
+  {
+    "id": "GTRS0046",
+    "name": "Harley Benton Fusion-II",
+    "description": "Một cây guitar điện giá cả phải chăng với chất lượng âm thanh tốt và thiết kế hiện đại.",
+    "image": "GTR046.jpg",
+    "price": 600,
+    "rating": "Tốt",
+    "xuat_su": "Trung Quốc",
+    "comments": [
+      {
+        "user": "BudgetGuitarist",
+        "comment": "Đây là cây đàn tuyệt vời cho những người mới bắt đầu, với mức giá rất hợp lý.",
+        "date": "2025-04-20"
+      }
+    ]
+  },
+  {
+    "id": "GTRS0047",
+    "name": "Breedlove Organic Wildwood",
+    "description": "Một cây guitar acoustic chất lượng cao với âm thanh tự nhiên và thiết kế cổ điển.",
+    "image": "GTR047.jpg",
+    "price": 900,
+    "rating": "Tốt",
+    "xuat_su": "Mỹ",
+    "comments": [
+      {
+        "user": "AcousticLover",
+        "comment": "Cây đàn này cho âm thanh rất ấm áp và phù hợp với những phong cách nhạc acoustic.",
+        "date": "2025-04-22"
+      }
+    ]
+  },
+  {
+    "id": "GTRS0048",
+    "name": "Music Man Majesty",
+    "description": "Một cây guitar điện cao cấp với thiết kế hiện đại và âm thanh vượt trội.",
+    "image": "GTR048.jpg",
+    "price": 3500,
+    "rating": "Xuất Sắc",
+    "xuat_su": "Mỹ",
+    "comments": [
+      {
+        "user": "ProGuitarist",
+        "comment": "Cây đàn này không chỉ đẹp mà còn có âm thanh tuyệt vời. Phù hợp với những buổi biểu diễn chuyên nghiệp.",
+        "date": "2025-04-23"
+      }
+    ]
+  },
+  {
+    "id": "GTRS0049",
+    "name": "Alhambra 7C Classic",
+    "description": "Một cây guitar cổ điển với âm thanh tuyệt vời, phù hợp cho người chơi chuyên nghiệp.",
+    "image": "GTR049.jpg",
+    "price": 1200,
+    "rating": "Rất Tốt",
+    "xuat_su": "Tây Ban Nha",
+    "comments": [
+      {
+        "user": "ClassicalMaster",
+        "comment": "Một cây đàn tuyệt vời với âm thanh cổ điển ấm áp, rất thích hợp cho người chơi chuyên nghiệp.",
+        "date": "2025-04-22"
+      }
+    ]
+  },
+  {
+    "id": "GTRS0050",
+    "name": "D’Angelico Premier DC",
+    "description": "Một cây hollow body guitar với thiết kế tinh tế và âm thanh cân bằng.",
+    "image": "GTR050.jpg",
+    "price": 1000,
+    "rating": "Tốt",
+    "xuat_su": "Hàn Quốc",
+    "comments": [
+      {
+        "user": "BluesGuitarFan",
+        "comment": "Cây đàn này có âm thanh rất cân bằng và phù hợp với nhạc jazz và blues.",
+        "date": "2025-04-21"
+      }
+    ]
+  }
+]

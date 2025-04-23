@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Cập nhật sản phẩm</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 20px;
+        display: flex;
+        gap: 30px;
+      }
+      label {
+        display: block;
+        margin: 10px 0 5px;
+      }
+      input,
+      textarea {
+        width: 100%;
+        padding: 8px;
+        margin-bottom: 10px;
+        box-sizing: border-box;
+      }
+      button {
+        padding: 10px 20px;
+        background-color: #4caf50;
+        color: white;
+        border: none;
+        cursor: pointer;
+      }
+      button:hover {
+        background-color: #45a049;
+      }
+      .product-list {
+        width: 40%;
+        border: 1px solid #ddd;
+        padding: 20px;
+        border-radius: 5px;
+      }
+      .product-list h2 {
+        text-align: center;
+      }
+      .product-item {
+        padding: 10px;
+        margin-bottom: 10px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+      .product-item:hover {
+        background-color: #f1f1f1;
+      }
+      .update-form {
+        width: 55%;
+        border: 1px solid #ddd;
+        padding: 20px;
+        border-radius: 5px;
+      }
+      .update-form h2 {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="product-list">
+      <h2>Danh sách sản phẩm</h2>
+      <div id="productList"></div>
+    </div>
+
+    <div class="update-form">
+      <h2>Cập nhật sản phẩm</h2>
+      <form id="updateForm" enctype="multipart/form-data">
+        <label for="id">ID sản phẩm:</label>
+        <input type="text" id="id" name="id" readonly />
+
+        <label for="name">Tên sản phẩm:</label>
+        <input type="text" id="name" name="name" required />
+
+        <label for="description">Mô tả:</label>
+        <textarea id="description" name="description" required></textarea>
+
+        <label for="price">Giá sản phẩm:</label>
+        <input type="number" id="price" name="price" required />
+
+        <label for="xuat_su">Xuất xứ:</label>
+        <input type="text" id="xuat_su" name="xuat_su" required />
+
+        <label for="image"
+          >Chọn hình ảnh mới (bỏ trống nếu không thay đổi):</label
+        >
+        <input type="file" id="image" name="image" accept="image/*" />
+
+        <button type="submit">Cập nhật sản phẩm</button>
+      </form>
+    </div>
+
+    <script>
+      // Tải danh sách sản phẩm
+      function loadProducts() {
+        fetch("/api/products")
+          .then((response) => response.json())
+          .then((products) => {
+            const productList = document.getElementById("productList");
+            productList.innerHTML = "";
+
+            products.forEach((product) => {
+              const productItem = document.createElement("div");
+              productItem.classList.add("product-item");
+              productItem.textContent = `${product.name} - ${product.id}`;
+              productItem.addEventListener("click", () =>
+                loadProductDetails(product.id)
+              );
+              productList.appendChild(productItem);
+            });
+          })
+          .catch((error) => {
+            console.error("Error loading products:", error);
+          });
+      }
+
+      // Tải chi tiết sản phẩm
+      function loadProductDetails(id) {
+        fetch(`/api/products/${id}`)
+          .then((response) => response.json())
+          .then((product) => {
+            // Điền thông tin sản phẩm vào form
+            document.getElementById("id").value = product.id;
+            document.getElementById("name").value = product.name;
+            document.getElementById("description").value = product.description;
+            document.getElementById("price").value = product.price;
+            document.getElementById("xuat_su").value = product.xuat_su;
+          })
+          .catch((error) => {
+            console.error("Error loading product details:", error);
+          });
+      }
+
+      // Cập nhật thông tin sản phẩm
+      document
+        .getElementById("updateForm")
+        .addEventListener("submit", function (event) {
+          event.preventDefault(); // Ngừng hành động mặc định của form
+
+          const id = document.getElementById("id").value;
+          const name = document.getElementById("name").value;
+          const description = document.getElementById("description").value;
+          const price = document.getElementById("price").value;
+          const xuat_su = document.getElementById("xuat_su").value;
+          const image = document.getElementById("image").files[0];
+
+          const formData = new FormData();
+          formData.append("name", name);
+          formData.append("description", description);
+          formData.append("price", price);
+          formData.append("xuat_su", xuat_su);
+          if (image) {
+            formData.append("image", image);
+          }
+          // Gửi yêu cầu PUT để cập nhật sản phẩm
+          fetch(`/api/products/${id}`, {
+            method: "PUT",
+            body: formData,
+          })
+            .then((response) => response.json())
+            .then((data) => {
+              alert("Sản phẩm đã được cập nhật thành công!");
+              loadProducts(); // Làm mới danh sách sản phẩm
+              document.getElementById("updateForm").reset(); // Xóa nội dung form
+            })
+            .catch((error) => {
+              console.error("Error updating product:", error);
+              alert("Đã xảy ra lỗi khi cập nhật sản phẩm.");
+            });
+        });
+
+      // Tải danh sách sản phẩm khi trang được tải
+      loadProducts();
+    </script>
+  </body>
+</html>

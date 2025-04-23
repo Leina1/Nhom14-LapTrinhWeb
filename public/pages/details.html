@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Chi tiết sản phẩm</title>
+    <style>
+      .product-details {
+        display: flex;
+        gap: 20px;
+        margin-top: 20px;
+      }
+      .product-details img {
+        width: 300px;
+        height: 300px;
+        object-fit: contain;
+        border-radius: 5px;
+      }
+      .product-details .info {
+        max-width: 600px;
+      }
+      .comment-section {
+        margin-top: 30px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+      .comment {
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      }
+      .comment h4 {
+        margin: 0;
+        font-size: 1.1em;
+      }
+      .comment p {
+        margin-top: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Chi tiết sản phẩm</h1>
+    <div id="productDetails" class="product-details"></div>
+    <div id="comments" class="comment-section"></div>
+
+    <script>
+      const urlParams = new URLSearchParams(window.location.search);
+      const productId = urlParams.get("id");
+
+      // Hàm để tải chi tiết sản phẩm
+      function loadProductDetails(id) {
+        fetch(`/api/products/${id}`)
+          .then((response) => {
+            if (!response.ok) {
+              throw new Error("Sản phẩm không tìm thấy");
+            }
+            return response.json();
+          })
+          .then((product) => {
+            const productDetails = document.getElementById("productDetails");
+
+            // Hiển thị chi tiết sản phẩm
+            const productImage = document.createElement("img");
+            productImage.src = product.image
+              ? `/images/${product.image}`
+              : "https://via.placeholder.com/150";
+
+            const productInfo = document.createElement("div");
+            productInfo.classList.add("info");
+
+            const productId = document.createElement("p");
+            productId.textContent = `ID: ${product.id || "Không xác định"}`;
+
+            const productName = document.createElement("h2");
+            productName.textContent =
+              product.name || "Tên sản phẩm không xác định";
+
+            const productDescription = document.createElement("p");
+            productDescription.textContent = `Mô tả: ${
+              product.description || "Mô tả sản phẩm không có sẵn."
+            }`;
+
+            const productPrice = document.createElement("p");
+            productPrice.textContent = `Giá: ${
+              product.price?.toLocaleString() || 0
+            } VND`;
+
+            const productRating = document.createElement("p");
+            productRating.textContent = `Đánh giá: ${
+              product.rating || "Chưa có đánh giá"
+            }`;
+
+            const productXuatSu = document.createElement("p");
+            productXuatSu.textContent = `Xuất xứ: ${
+              product.xuat_su || "Chưa có thông tin"
+            }`;
+
+            productInfo.appendChild(productId);
+            productInfo.appendChild(productName);
+            productInfo.appendChild(productDescription);
+            productInfo.appendChild(productPrice);
+            productInfo.appendChild(productRating);
+            productInfo.appendChild(productXuatSu);
+
+            productDetails.appendChild(productImage);
+            productDetails.appendChild(productInfo);
+          })
+          .catch((error) => {
+            console.error("Error loading product details:", error);
+            document.getElementById("productDetails").innerHTML =
+              "<p>Lỗi khi tải chi tiết sản phẩm. Vui lòng thử lại.</p>";
+          });
+      }
+
+      // Hàm để tải bình luận của sản phẩm
+      function loadComments(id) {
+        fetch(`/api/products/${id}/comments`)
+          .then((response) => {
+            if (!response.ok) {
+              throw new Error("Không tìm thấy bình luận");
+            }
+            return response.json();
+          })
+          .then((comments) => {
+            const commentsContainer = document.getElementById("comments");
+            commentsContainer.innerHTML = "";
+            if (!comments || comments.length === 0) {
+              commentsContainer.innerHTML = "<p>Chưa có bình luận nào.</p>";
+              return;
+            }
+            comments.forEach((comment) => {
+              const commentDiv = document.createElement("div");
+              commentDiv.classList.add("comment");
+
+              const commentAuthor = document.createElement("h4");
+              commentAuthor.textContent = comment.user || "Khách hàng ẩn danh";
+
+              const commentText = document.createElement("p");
+              commentText.textContent =
+                comment.comment || "Chưa có nội dung bình luận.";
+
+              const commentDate = document.createElement("p");
+              commentDate.textContent = `Ngày: ${
+                comment.date || "Không xác định"
+              }`;
+
+              commentDiv.appendChild(commentAuthor);
+              commentDiv.appendChild(commentText);
+              commentDiv.appendChild(commentDate);
+              commentsContainer.appendChild(commentDiv);
+            });
+          })
+          .catch((error) => {
+            console.error("Error loading comments:", error);
+            document.getElementById("comments").innerHTML =
+              "<p>Lỗi khi tải bình luận. Vui lòng thử lại.</p>";
+          });
+      }
+
+      // Khi trang được tải, tải chi tiết sản phẩm và bình luận
+      if (productId) {
+        loadProductDetails(productId);
+        loadComments(productId);
+      } else {
+        document.getElementById("productDetails").innerHTML =
+          "<p>Không tìm thấy ID sản phẩm.</p>";
+      }
+    </script>
+  </body>
+</html>
